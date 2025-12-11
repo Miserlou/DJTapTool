@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+<link rel="icon" href="data:image/png;base64,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" type="image/png">
+<title>DJ Tap Tool - Dual BPM Counter for Beat Matching Vinyl DJs</title>
+<style>
+  html, body {
+    margin:0;
+    padding:0;
+    background:#111;
+    color:#eee;
+    font-family:Helvetica,Arial,sans-serif;
+    height:100%;
+    overflow:hidden;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Allow selection only for input fields */
+  input, textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  
+  body{display:flex}
+  @media (orientation:portrait){body{flex-direction:column}.deck{border-bottom:1px solid #333;border-right:none}.deck:last-child{border-bottom:none}}
+  @media (orientation:landscape){body{flex-direction:row}.deck{border-right:1px solid #333;border-bottom:none}.deck:last-child{border-right:none}}
+  .deck{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    padding:20px;
+    touch-action:manipulation;
+    background: linear-gradient(to bottom, #1a1a1a, #111);
+    overflow:hidden;
+  }
+  .bpm{font-size:clamp(3rem,15vw,6rem);font-weight:700;z-index:1;position:relative}
+  .pitch{font-size:clamp(1.6rem,8vw,2.6rem);margin-top:.4em;z-index:1;position:relative}
+  .pitch.positive{color:#7f7}
+  .pitch.negative{color:#f77}
+  .edit-btn{position:absolute;top:10px;right:10px;cursor:pointer;font-size:2rem;z-index:20;opacity:0.5;transition:opacity 0.2s;color:#eee}
+  .edit-btn:hover{opacity:0.8}
+  .edit-box{position:absolute;top:50px;right:10px;background:#000;padding:10px;border:1px solid #444;border-radius:8px;display:flex;gap:6px;z-index:30}
+  .edit-box input{width:90px;font-size:1.6rem;background:#111;color:#eee;border:1px solid #666;padding:6px;text-align:center}
+  .edit-box button{background:#222;color:#eee;border:1px solid #666;padding:6px 12px;cursor:pointer;font-size:1.4rem}
+  .rpm-info{margin-top:1.2em;font-size:clamp(0.9rem,4.5vw,1.2rem);color:#bbb;opacity:.9;display:flex;justify-content:center;gap:2rem;text-align:center;z-index:1;position:relative}
+  .rpm-info .left,.rpm-info .right{display:inline-block;min-width:8rem}
+  .rpm-val{color:#ddd;font-weight:700;margin-left:0.3rem}
+  
+  /* Flash animation - shorter, more subtle, darker flash */
+  .deck::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #222, #161616);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  .deck.flash::before {
+    animation: flashPulse 0.25s ease-out;
+  }
+  
+  @keyframes flashPulse {
+    0% {
+      opacity: 0;
+    }
+    15% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  /* GitHub link - desktop only */
+  .github-link {
+    position: fixed;
+    bottom: 8px;
+    right: 12px;
+    font-size: 12px;
+    color: #888;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s, color 0.2s;
+    z-index: 100;
+    font-family: Helvetica, Arial, sans-serif;
+    letter-spacing: 0.3px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  .github-link:hover {
+    opacity: 1;
+    color: #aaa;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Help button - desktop only */
+  .help-button {
+    position: fixed;
+    bottom: 8px;
+    left: 12px;
+    font-size: 18px;
+    color: #888;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s, color 0.2s;
+    z-index: 100;
+    font-family: Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    user-select: none;
+  }
+  
+  .help-button:hover {
+    opacity: 1;
+    color: #aaa;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Modal overlay */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-overlay.active {
+    display: flex;
+  }
+  
+  /* Modal content */
+  .modal {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 500px;
+    width: 80%;
+    color: #eee;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+  
+  .modal h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #fff;
+    font-size: 1.8rem;
+  }
+  
+  .modal p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #ccc;
+  }
+  
+  .modal ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .modal li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: #ccc;
+  }
+  
+  .modal strong {
+    color: #fff;
+  }
+  
+  .modal code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+    color: #7f7;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #888;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .close-button:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Hide on mobile/portrait */
+  @media (orientation: portrait) {
+    .github-link, .help-button {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .github-link, .help-button {
+      display: none;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="deck" id="left">
+  <div class="edit-btn">✎</div>
+  <div class="bpm" id="left-bpm">140.0</div>
+  <div class="pitch"><span id="left-percent">0.0%</span></div>
+  <div class="rpm-info" id="left-rpm"><span class="left">45↓ <span class="rpm-val">104.1</span></span><span class="right">33↑ <span class="rpm-val">189.0</span></span></div>
+</div>
+<div class="deck" id="right">
+  <div class="edit-btn">✎</div>
+  <div class="bpm" id="right-bpm">140.0</div>
+  <div class="pitch"><span id="right-percent">0.0%</span></div>
+  <div class="rpm-info" id="right-rpm"><span class="left">45↓ <span class="rpm-val">104.1</span></span><span class="right">33↑ <span class="rpm-val">189.0</span></span></div>
+</div>
+
+<!-- GitHub Link -->
+<a href="https://github.com/Miserlou/DJTapTool" class="github-link" target="_blank" rel="noopener">github.com/Miserlou</a>
+
+<!-- Help Button -->
+<div class="help-button" id="help-button">?</div>
+
+<!-- Modal Overlay -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <button class="close-button" id="close-button">×</button>
+    <h2>DJ Tap Tool</h2>
+    <p>A BPM tapping tool for vinyl DJs to calculate pitch adjustments between two decks.</p>
+    
+    <p><strong>How to use:</strong></p>
+    <ul>
+      <li><strong>Tap</strong> on either deck area to calculate its BPM</li>
+      <li><strong>Keyboard shortcuts</strong>: Press <code>A</code> for left deck, <code>L</code> for right deck</li>
+      <li><strong>Edit BPM</strong>: Click the pencil icon (✎) to manually enter a BPM</li>
+      <li><strong>Pitch percentage</strong>: Shows the adjustment needed to match the other deck's tempo</li>
+      <li><strong>RPM conversion</strong>: Shows equivalent speeds for 33⅓ and 45 RPM records</li>
+    </ul>
+    
+  </div>
+</div>
+
+<script>
+const TAP_RESET = 1500;
+const MAX_TAPS = 6;
+const state = { left: { taps: [], lastTap: 0, bpm: 140 }, right: { taps: [], lastTap: 0, bpm: 140 } };
+
+// Original BPM algorithm that felt better
+function computeBPM(taps){ 
+  if (taps.length < 2) return null; 
+  const recent = taps.slice(-MAX_TAPS); 
+  const ints = []; 
+  for(let i = 1; i < recent.length; i++) ints.push(recent[i] - recent[i - 1]); 
+  const avg = ints.reduce((a, b) => a + b, 0) / ints.length; 
+  return 60000 / avg;
+}
+
+function updateDisplay(){
+  const l = state.left.bpm, r = state.right.bpm;
+  document.getElementById('left-bpm').textContent = l.toFixed(1);
+  document.getElementById('right-bpm').textContent = r.toFixed(1);
+  const lp = ((r / l) - 1) * 100;
+  const rp = ((l / r) - 1) * 100;
+  const lPct = document.getElementById('left-percent');
+  const rPct = document.getElementById('right-percent');
+  lPct.textContent = (lp >= 0 ? '+' : '') + lp.toFixed(1) + '%';
+  rPct.textContent = (rp >= 0 ? '+' : '') + rp.toFixed(1) + '%';
+  lPct.className = (lp > 0 ? 'pitch positive' : lp < 0 ? 'pitch negative' : 'pitch');
+  rPct.className = (rp > 0 ? 'pitch positive' : rp < 0 ? 'pitch negative' : 'pitch');
+  const ratio45to33 = 33.3333/45;
+  const ratio33to45 = 45/33.3333;
+  const leftRpm = document.getElementById('left-rpm');
+  const rightRpm = document.getElementById('right-rpm');
+  if (leftRpm){ 
+    leftRpm.querySelector('.left .rpm-val').textContent = (l * ratio45to33).toFixed(1); 
+    leftRpm.querySelector('.right .rpm-val').textContent = (l * ratio33to45).toFixed(1); 
+  }
+  if (rightRpm){ 
+    rightRpm.querySelector('.left .rpm-val').textContent = (r * ratio45to33).toFixed(1); 
+    rightRpm.querySelector('.right .rpm-val').textContent = (r * ratio33to45).toFixed(1); 
+  }
+}
+
+function tap(side){
+  const s = state[side];
+  const now = performance.now();
+  if (now - s.lastTap > TAP_RESET) s.taps = [];
+  s.lastTap = now;
+  s.taps.push(now);
+  const bpm = computeBPM(s.taps);
+  if(bpm) s.bpm = bpm;
+  flash(side);
+  updateDisplay();
+}
+
+function flash(side){
+  const deck = document.getElementById(side);
+  
+  // Remove any existing flash class to reset animation
+  deck.classList.remove('flash');
+  
+  // Force reflow to restart animation
+  void deck.offsetWidth;
+  
+  // Add flash class to trigger animation
+  deck.classList.add('flash');
+  
+  // Remove the class after animation completes
+  setTimeout(() => {
+    deck.classList.remove('flash');
+  }, 250);
+}
+
+function openEditor(side){
+  closeEditors();
+  const deck = document.getElementById(side);
+  const box = document.createElement('div');
+  box.className = 'edit-box';
+  box.innerHTML = `<input type="number" step="0.1" value="${state[side].bpm.toFixed(1)}"><button>OK</button>`;
+  const input = box.querySelector('input');
+  const btn = box.querySelector('button');
+  const apply = () => { 
+    const v = parseFloat(input.value); 
+    if(!isNaN(v) && v > 0){ 
+      state[side].bpm = v; 
+      state[side].taps = []; 
+      updateDisplay(); 
+    } 
+    closeEditors(); 
+  };
+  btn.onclick = apply;
+  input.onkeydown = e => { 
+    if(e.key === 'Enter') apply(); 
+  };
+  
+  // Prevent these events from triggering a tap
+  box.addEventListener('touchstart', e => e.stopPropagation());
+  box.addEventListener('mousedown', e => e.stopPropagation());
+  
+  deck.appendChild(box);
+  
+  // Focus and select the input text
+  setTimeout(() => {
+    input.focus();
+    input.select();
+  }, 10);
+}
+
+function closeEditors(){ 
+  document.querySelectorAll('.edit-box').forEach(b => b.remove()); 
+}
+
+function isEditButton(el){ 
+  return el.classList && el.classList.contains && el.classList.contains('edit-btn'); 
+}
+
+// Modal functionality
+function showModal() {
+  document.getElementById('modal-overlay').classList.add('active');
+}
+
+function hideModal() {
+  document.getElementById('modal-overlay').classList.remove('active');
+}
+
+// Set up event handlers for both decks
+['left','right'].forEach(side => {
+  const el = document.getElementById(side);
+  const handler = e => {
+    if(isEditButton(e.target)) return openEditor(side);
+    if(e.type === 'touchstart'){ 
+      e.preventDefault(); 
+      tap(side); 
+      closeEditors(); 
+    }
+    else if(e.type === 'mousedown' && e.button === 0){ // Left mouse button only
+      tap(side); 
+      closeEditors(); 
+    }
+  };
+  el.addEventListener('touchstart', handler, {passive: false});
+  el.addEventListener('mousedown', handler);
+});
+
+// Close editor when clicking outside
+document.addEventListener('mousedown', (e) => {
+  if (!e.target.closest('.edit-box') && !isEditButton(e.target)) {
+    closeEditors();
+  }
+});
+
+// Keyboard shortcuts for tapping
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'a' || e.key === 'A') {
+    tap('left');
+    closeEditors();
+  } else if (e.key === 'l' || e.key === 'L') {
+    tap('right');
+    closeEditors();
+  } else if (e.key === 'Escape') {
+    closeEditors();
+    hideModal();
+  }
+});
+
+// Initialize display
+updateDisplay();
+
+// Prevent context menu on long press
+document.addEventListener('contextmenu', (e) => {
+  if (!e.target.closest('.edit-box')) {
+    e.preventDefault();
+    return false;
+  }
+});
+
+// Prevent text selection on double click
+document.addEventListener('mousedown', (e) => {
+  if (e.detail > 1 && !e.target.closest('.edit-box')) {
+    e.preventDefault();
+  }
+});
+
+// Modal event handlers
+document.getElementById('help-button').addEventListener('click', showModal);
+document.getElementById('close-button').addEventListener('click', hideModal);
+document.getElementById('modal-overlay').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('modal-overlay')) {
+    hideModal();
+  }
+});
+</script>
+</body>
+</html>
