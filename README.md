@@ -1,4 +1,4 @@
-<img src="demo.png" width="50%">
+<img src="demo.png" width="50%" style="margin: 0 auto;">
 
 # DJTapTool 
 A dual BPM counter for beatmatching vinyl DJs.
